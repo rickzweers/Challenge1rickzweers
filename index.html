@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Challenge 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Asap+Condensed" rel="stylesheet" />
+		<link type="text/css" href="styles/main.css" rel="stylesheet" />
+		<link type="text/css" href="styles/grid-layout.css" rel="stylesheet" />	
+
+
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+ 
+<script>
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Info', 'Procenten'],
+          ['Personen',     50],
+          ['Eten',      30],
+          ['Drinken',  20]
+        ]);
+
+        var options = {
+          title: 'Ruimtegebruik',
+          pieHole: 0.4,
+          backgroundColor: { fill:'transparent' }
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+
+      }
+    </script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Naam');
+        data.addColumn('number', 'Cijfer');
+        data.addColumn('boolean', 'Tevredenheid');
+        data.addRows([
+          ['Mike',  {v: 10, f: '10'}, true],
+          ['Jim',   {v: 5,   f: '5'},  false],
+          ['Alice', {v: 8, f: '8'}, true],
+          ['Bob',   {v: 7,  f: '7'},  true]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+    </script>
+
+  <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];
+	</script>
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['G-force', 80],
+          ['Fuel', 55],
+          ['Snelheid', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 200,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+      }
+    </script>
+
+
+  
+
+
+  
+	</head>
+	<body>
+	 
+
+	  <div class="grid-container">
+
+	  	
+
+	    <div class="grid-item box2">
+	    	
+    <div id="table_div"></div>
+
+	    </div>
+	    <div class="grid-item box3">
+	     <div id="donutchart" style="width: 100%; height: 200px; background-color: #01AAEF;"></div></div>
+	    <div class="grid-item box4">
+	    	<div id="chart_div" style="width: 400px; height: 200px; background-color: #01AAEF;"></div>
+		</div>
+	    <div class="grid-item box5">
+	    	<img src="images/logo.png" class="logo"> 
+	    </div>
+	    <div class="grid-item box6"></div>
+	   <!-- <div class="grid-item box7"><h2>box seven</h2></div>
+	    <div class="grid-item box8"><h2>box eight</h2></div>
+	    <div class="grid-item box9"><h2>box nine</h2></div>
+	    <div class="grid-item box10"><h2>box ten</h2></div>
+	    <div class="grid-item box11"><h2>box eleven</h2></div>
+	    <div class="grid-item box12"><h2>box twelve</h2></div>
+	-->
+	  </div>
+
+	  <script type="text/javascript" src="scripts/main.js"></script>
+	</body>
+</html>
